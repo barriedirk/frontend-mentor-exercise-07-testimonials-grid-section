@@ -1,0 +1,229 @@
+:root {
+  --clr-purple-50: #eee6ff;
+  --clr-purple-300: #c4a2f6;
+  --clr-purple-500: #7541c8;
+  --clr-white: #fff;
+  --clr-grey-100: #e7eaee;
+  --clr-grey-200: #cfcfcf;
+  --clr-grey-400: #676d7e;
+  --clr-grey-500: #48556a;
+  --clr-dark-blue: #19212e;
+  --clr-black: #121212;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Barlow Semi Condensed, sans-serif;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.wrapper {
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100dvh;
+  padding: 40px 20px;
+  display: flex;
+}
+
+.testimonials {
+  flex-direction: column;
+  gap: 32px;
+  width: 305px;
+  margin: auto;
+  display: flex;
+}
+
+.testimonial {
+  border-radius: 15px;
+  padding: 32px;
+  box-shadow: 0 22px 70px 4px #0000004d;
+}
+
+.testimonial figure {
+  flex-direction: row;
+  align-items: center;
+  gap: 17px;
+  display: flex;
+}
+
+.testimonial figure img {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+
+.testimonial figure figcaption cite {
+  font-weight: 500;
+}
+
+.testimonial figure figcaption p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.testimonial blockquote p {
+  margin-top: 16px;
+}
+
+.testimonial blockquote p:first-child strong {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.testimonial blockquote p:last-child {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.testimonial--daniel {
+  background-color: var(--clr-purple-500);
+  color: var(--clr-white);
+  grid-area: daniel;
+}
+
+.testimonial--daniel blockquote p:last-child {
+  color: var(--clr-purple-50);
+}
+
+.testimonial--daniel figure img {
+  box-shadow: 1px 1px 10px var(--clr-purple-300);
+}
+
+.testimonial--jonathan {
+  background-color: var(--clr-grey-500);
+  color: var(--clr-white);
+  grid-area: jonathan;
+}
+
+.testimonial--jonathan figure img {
+  box-shadow: 1px 1px 10px var(--clr-grey-200);
+}
+
+.testimonial--jonathan figcaption p {
+  color: var(--clr-grey-300);
+}
+
+.testimonial--jonathan blockquote p:last-child {
+  color: var(--clr-grey-100);
+}
+
+.testimonial--jeanette {
+  background-color: var(--clr-white);
+  color: var(--clr-grey-500);
+  grid-area: jeanette;
+}
+
+.testimonial--jeanette figure img {
+  box-shadow: 1px 1px 10px var(--clr-grey-400);
+}
+
+.testimonial--jeanette blockquote p:last-child {
+  color: var(--clr-grey-400);
+}
+
+.testimonial--patrick {
+  background-color: var(--clr-dark-blue);
+  color: var(--clr-grey-200);
+  grid-area: patrick;
+}
+
+.testimonial--patrick figure img {
+  box-shadow: 1px 1px 10px var(--clr-grey-200);
+}
+
+.testimonial--patrick figcaption {
+  color: var(--clr-white);
+}
+
+.testimonial--patrick blockquote p:first-child {
+  color: var(--clr-grey-200);
+}
+
+.testimonial--patrick blockquote p:last-child {
+  color: var(--clr-grey-100);
+}
+
+.testimonial--kira {
+  background-color: var(--clr-white);
+  color: var(--clr-grey-500);
+  grid-area: kira;
+}
+
+.testimonial--kira figure img {
+  box-shadow: 1px 1px 10px var(--clr-grey-400);
+}
+
+.testimonial--kira figcaption p {
+  color: var(--clr-grey-300);
+}
+
+.testimonial--kira blockquote p:last-child {
+  color: var(--clr-grey-400);
+}
+
+@media screen and (width >= 768px) {
+  .testimonials {
+    grid-template: "daniel ."
+                   "jonathan jeanette"
+                   "patrick ."
+                   "kira ."
+                   / 1fr 1fr;
+    gap: 32px;
+    width: fit-content;
+    max-width: 647px;
+    display: grid;
+  }
+
+  .testimonial--daniel, .testimonial--patrick, .testimonial--kira {
+    grid-column: span 2;
+  }
+
+  .testimonial--daniel {
+    background-image: url("bg-pattern-quotation.079db902.svg");
+    background-position: 71% 0;
+    background-repeat: no-repeat;
+    background-size: 110px 110px;
+  }
+}
+
+@media screen and (width >= 1440px) {
+  .testimonials {
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "daniel . jonathan kira"
+                         "jeanette patrick . .";
+    max-width: 1102px;
+  }
+
+  .testimonial--kira {
+    grid-area: span 2 / span 1;
+  }
+
+  .testimonial--patrick {
+    grid-column: span 2;
+  }
+
+  .testimonial--daniel {
+    background-position: 87% 0;
+  }
+}
+/*# sourceMappingURL=frontend-mentor-exercise-07-testimonials-grid-section.e5980c4e.css.map */
